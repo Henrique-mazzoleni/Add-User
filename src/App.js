@@ -1,9 +1,10 @@
 import "./App.css";
+import UserInput from "./Components/UserInput";
 
 function App() {
   return (
     <div className="App">
-      <p>Add User Here.</p>
+      <UserInput />
     </div>
   );
 }
