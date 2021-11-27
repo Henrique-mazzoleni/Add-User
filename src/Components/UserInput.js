@@ -29,14 +29,15 @@ const UserInput = (props) => {
     e.preventDefault();
 
     const submitedData = {
-      username: formInput.username,
-      age: formInput.age,
+      username: formInput.username.trim(),
+      age: formInput.age.trim(),
     };
 
     setFormInput({
       username: "",
       age: "",
     });
+
     props.onSaveInput(submitedData);
   };
 
@@ -49,13 +50,7 @@ const UserInput = (props) => {
         onChange={usernameChangeHandler}
       />
       <label>Age (Years)</label>
-      <input
-        type="number"
-        min="0"
-        step="1"
-        value={formInput.age}
-        onChange={ageChangeHandler}
-      />
+      <input type="number" value={formInput.age} onChange={ageChangeHandler} />
       <button>Add User</button>
     </form>
   );

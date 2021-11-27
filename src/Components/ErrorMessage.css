@@ -1,0 +1,46 @@
+.overlay {
+  position: fixed;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.8);
+  backdrop-filter: blur(4px);
+  z-index: 999;
+  transition: all 0.5s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.error-message {
+  width: 700px;
+  height: 100%;
+  height: 300px;
+  background: #ccc;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.error-message h1 {
+  height: 70px;
+  padding: 20px;
+  text-align: center;
+  text-justify: auto;
+  background-color: blue;
+}
+
+.error-message .body {
+  color: #333;
+}
+
+.body p {
+  margin: 50px;
+  font-size: 20px;
+}
+
+.error-message button {
+  background: #282c34;
+  color: #ccc;
+  padding: 0.8rem 1.2rem;
+  margin-top: 10px;
+  font-size: 1rem;
+  border-radius: 5px;
+}
