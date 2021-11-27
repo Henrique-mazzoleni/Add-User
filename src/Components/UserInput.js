@@ -2,9 +2,13 @@ import "./UserInput.css";
 
 const UserInput = () => {
   return (
-    <div className="user-input">
-      <p>This is the Input Component</p>
-    </div>
+    <form className="user-input">
+      <label>Username</label>
+      <input />
+      <label>Age (Years)</label>
+      <input />
+      <button>Add User</button>
+    </form>
   );
 };
 
