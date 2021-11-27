@@ -18,7 +18,8 @@
 }
 
 .user-input input {
-  padding: 0.7em 0;
+  padding: 0.7em 0.5em;
+  font-size: 15px;
 }
 
 .user-input button {
