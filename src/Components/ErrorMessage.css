@@ -3,7 +3,7 @@
   inset: 0;
   background-color: rgba(0, 0, 0, 0.8);
   backdrop-filter: blur(4px);
-  z-index: 999;
+  z-index: 100;
   transition: all 0.5s;
   display: flex;
   align-items: center;
@@ -11,12 +11,16 @@
 }
 
 .error-message {
-  width: 700px;
+  position: fixed;
+  top: 20vh;
+  left: 20vw;
+  width: 60vw;
   height: 100%;
   height: 300px;
   background: #ccc;
   border-radius: 10px;
   overflow: hidden;
+  z-index: 1000;
 }
 
 .error-message h1 {

@@ -2,7 +2,8 @@ import "./ErrorMessage.css";
 
 const ErrorMessage = (props) => {
   return (
-    <div className="overlay">
+    <div>
+      <div className="overlay" onClick={props.closeMessage}></div>
       <div className="error-message">
         <h1>Invalid input</h1>
         <div className="body">

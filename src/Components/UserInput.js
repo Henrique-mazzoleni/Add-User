@@ -43,15 +43,21 @@ const UserInput = (props) => {
 
   return (
     <form onSubmit={submitHandler} className="user-input">
-      <label>Username</label>
+      <label htmlFor="username">Username</label>
       <input
+        id="username"
         type="text"
         value={formInput.username}
         onChange={usernameChangeHandler}
       />
-      <label>Age (Years)</label>
-      <input type="number" value={formInput.age} onChange={ageChangeHandler} />
-      <button>Add User</button>
+      <label htmlFor="age">Age (Years)</label>
+      <input
+        id="age"
+        type="number"
+        value={formInput.age}
+        onChange={ageChangeHandler}
+      />
+      <button type="submit">Add User</button>
     </form>
   );
 };
