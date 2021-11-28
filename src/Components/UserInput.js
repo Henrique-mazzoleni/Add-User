@@ -1,42 +1,21 @@
 import "./UserInput.css";
-import { useState } from "react";
+import { useRef } from "react";
 
 const UserInput = (props) => {
-  const [formInput, setFormInput] = useState({
-    username: "",
-    age: "",
-  });
-
-  const usernameChangeHandler = (e) => {
-    setFormInput((prevState) => {
-      return {
-        ...prevState,
-        username: e.target.value,
-      };
-    });
-  };
-
-  const ageChangeHandler = (e) => {
-    setFormInput((prevState) => {
-      return {
-        ...prevState,
-        age: e.target.value,
-      };
-    });
-  };
+  const nameInput = useRef();
+  const ageInput = useRef();
 
   const submitHandler = (e) => {
     e.preventDefault();
 
     const submitedData = {
-      username: formInput.username.trim(),
-      age: formInput.age.trim(),
+      username: nameInput.current.value.trim(),
+      age: ageInput.current.value.trim(),
     };
 
-    setFormInput({
-      username: "",
-      age: "",
-    });
+    nameInput.current.value = "";
+    ageInput.current.value = "";
+    nameInput.current.focus();
 
     props.onSaveInput(submitedData);
   };
@@ -44,19 +23,9 @@ const UserInput = (props) => {
   return (
     <form onSubmit={submitHandler} className="user-input">
       <label htmlFor="username">Username</label>
-      <input
-        id="username"
-        type="text"
-        value={formInput.username}
-        onChange={usernameChangeHandler}
-      />
+      <input autoFocus id="username" type="text" ref={nameInput} />
       <label htmlFor="age">Age (Years)</label>
-      <input
-        id="age"
-        type="number"
-        value={formInput.age}
-        onChange={ageChangeHandler}
-      />
+      <input id="age" type="number" ref={ageInput} />
       <button type="submit">Add User</button>
     </form>
   );

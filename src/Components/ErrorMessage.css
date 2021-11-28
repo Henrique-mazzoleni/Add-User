@@ -27,7 +27,7 @@
   height: 70px;
   padding: 20px;
   text-align: center;
-  text-justify: auto;
+  text-justify: center;
   background-color: blue;
 }
 
@@ -41,10 +41,11 @@
 }
 
 .error-message button {
+  display: block;
   background: #282c34;
   color: #ccc;
   padding: 0.8rem 1.2rem;
-  margin-top: 10px;
+  margin: 10px auto 0;
   font-size: 1rem;
   border-radius: 5px;
 }
